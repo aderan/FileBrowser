@@ -1,0 +1,186 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ANDROID_LOG_H	android_log.h	2;"	d
+FileItem	fb_common.c	/^	typedef _FileItem FileItem;$/;"	t	file:
+FileItem	fb_common.h	/^	typedef _FileItem FileItem;$/;"	t
+Icon	fb_common.c	/^	struct Icon {$/;"	s	file:
+Icon	fb_common.h	/^	struct Icon {$/;"	s
+JSON_ARRAY	json.h	/^	JSON_ARRAY, $/;"	e	enum:json_value_type
+JSON_BAD_TREE_STRUCTURE	json.h	/^		JSON_BAD_TREE_STRUCTURE,	\/*!< the document tree structure is malformed *\/$/;"	e	enum:json_error
+JSON_FALSE	json.h	/^	JSON_FALSE, $/;"	e	enum:json_value_type
+JSON_H	json.h	34;"	d
+JSON_ILLEGAL_CHARACTER	json.h	/^		JSON_ILLEGAL_CHARACTER,	\/*!< the currently parsed character does not belong here *\/$/;"	e	enum:json_error
+JSON_INCOMPATIBLE_TYPE	json.h	/^		JSON_INCOMPATIBLE_TYPE,	\/*!< the currently parsed type does not belong here *\/$/;"	e	enum:json_error
+JSON_INCOMPLETE_DOCUMENT	json.h	/^		JSON_INCOMPLETE_DOCUMENT,	\/*!< the parsed document didn't ended *\/$/;"	e	enum:json_error
+JSON_MALFORMED_DOCUMENT	json.h	/^		JSON_MALFORMED_DOCUMENT,	\/* the JSON document which was fed to this parser is malformed *\/$/;"	e	enum:json_error
+JSON_MAXIMUM_LENGTH	json.h	/^		JSON_MAXIMUM_LENGTH,	\/*!< the parsed string reached the maximum allowed size *\/$/;"	e	enum:json_error
+JSON_MAX_STRING_LENGTH	json.h	41;"	d
+JSON_MEMORY	json.h	/^		JSON_MEMORY,	\/*!< an error occurred when allocating memory *\/$/;"	e	enum:json_error
+JSON_NULL	json.h	/^	JSON_NULL $/;"	e	enum:json_value_type
+JSON_NUMBER	json.h	/^	JSON_NUMBER, $/;"	e	enum:json_value_type
+JSON_OBJECT	json.h	/^	JSON_OBJECT, $/;"	e	enum:json_value_type
+JSON_OK	json.h	/^		JSON_OK = 1,	\/*!< everything went smoothly *\/$/;"	e	enum:json_error
+JSON_STRING	json.h	/^	{ JSON_STRING = 0, $/;"	e	enum:json_value_type
+JSON_TRUE	json.h	/^	JSON_TRUE, $/;"	e	enum:json_value_type
+JSON_UNKNOWN_PROBLEM	json.h	/^		JSON_UNKNOWN_PROBLEM	\/*!< some random, unaccounted problem occurred *\/$/;"	e	enum:json_error
+JSON_WAITING_FOR_EOF	json.h	/^		JSON_WAITING_FOR_EOF,	\/*!< A complete JSON document tree was already finished but needs to get to EOF. Other characters beyond whitespaces produce errors *\/$/;"	e	enum:json_error
+LEX_BEGIN_ARRAY	json.c	/^	LEX_BEGIN_ARRAY,$/;"	e	enum:LEX_VALUE	file:
+LEX_BEGIN_OBJECT	json.c	/^	LEX_BEGIN_OBJECT,$/;"	e	enum:LEX_VALUE	file:
+LEX_END_ARRAY	json.c	/^	LEX_END_ARRAY,$/;"	e	enum:LEX_VALUE	file:
+LEX_END_OBJECT	json.c	/^	LEX_END_OBJECT,$/;"	e	enum:LEX_VALUE	file:
+LEX_ERROR	json.c	/^	LEX_ERROR,$/;"	e	enum:LEX_VALUE	file:
+LEX_FALSE	json.c	/^	LEX_FALSE,$/;"	e	enum:LEX_VALUE	file:
+LEX_INVALID_CHARACTER	json.c	/^	LEX_INVALID_CHARACTER,$/;"	e	enum:LEX_VALUE	file:
+LEX_MEMORY	json.c	/^	LEX_MEMORY$/;"	e	enum:LEX_VALUE	file:
+LEX_MORE	json.c	/^{ LEX_MORE = 0,$/;"	e	enum:LEX_VALUE	file:
+LEX_NAME_SEPARATOR	json.c	/^	LEX_NAME_SEPARATOR,$/;"	e	enum:LEX_VALUE	file:
+LEX_NULL	json.c	/^	LEX_NULL,$/;"	e	enum:LEX_VALUE	file:
+LEX_NUMBER	json.c	/^	LEX_NUMBER,$/;"	e	enum:LEX_VALUE	file:
+LEX_STRING	json.c	/^	LEX_STRING,$/;"	e	enum:LEX_VALUE	file:
+LEX_TRUE	json.c	/^	LEX_TRUE,$/;"	e	enum:LEX_VALUE	file:
+LEX_VALUE	json.c	/^enum LEX_VALUE$/;"	g	file:
+LEX_VALUE_SEPARATOR	json.c	/^	LEX_VALUE_SEPARATOR,$/;"	e	enum:LEX_VALUE	file:
+LOCAL_LOG_TAG	fb_file.c	9;"	d	file:
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE     := airplay_jni$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := glib$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := icui18n$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := icuuc$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := shairplay$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE    := xml2$/;"	m
+LOCAL_PATH	Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES  := airplay_jni.cpp json.c kairnet.cpp kairplay.cpp kairport.cpp $/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := \\$/;"	m
+LOGD	android_log.h	7;"	d
+LOGE	android_log.h	10;"	d
+LOGI	android_log.h	8;"	d
+LOGV	android_log.h	6;"	d
+LOGW	android_log.h	9;"	d
+NOT_EXIST	fb_common.h	/^		NOT_EXIST,$/;"	e	enum:ReadErr
+PERMITTION_DENIED	fb_common.h	/^		PERMITTION_DENIED$/;"	e	enum:ReadErr
+RSTRING_DEFAULT	json.c	52;"	d	file:
+RSTRING_INCSTEP	json.c	51;"	d	file:
+RS_MEMORY	json.c	/^{ RS_MEMORY, RS_OK = 1, RS_UNKNOWN };$/;"	e	enum:rui_string_error_codes	file:
+RS_OK	json.c	/^{ RS_MEMORY, RS_OK = 1, RS_UNKNOWN };$/;"	e	enum:rui_string_error_codes	file:
+RS_UNKNOWN	json.c	/^{ RS_MEMORY, RS_OK = 1, RS_UNKNOWN };$/;"	e	enum:rui_string_error_codes	file:
+ReadErr	fb_common.h	/^	enum ReadErr{$/;"	g
+TIME_OUT	fb_common.h	/^		TIME_OUT,$/;"	e	enum:ReadErr
+Thumbnail	fb_common.c	/^	struct Thumbnail {$/;"	s	file:
+Thumbnail	fb_common.h	/^	struct Thumbnail {$/;"	s
+UNKNOWN_ERRPR	fb_common.h	/^		UNKNOWN_ERRPR = 1,$/;"	e	enum:ReadErr
+_FB_COMMON_H_	fb_common.c	2;"	d	file:
+_FB_COMMON_H_	fb_common.h	2;"	d
+_FileItem	fb_common.c	/^	struct _FileItem {$/;"	s	file:
+_FileItem	fb_common.h	/^	struct _FileItem {$/;"	s
+atime	fb_common.c	/^		unsigned long atime;$/;"	m	struct:_FileItem	file:
+atime	fb_common.h	/^		unsigned long atime;$/;"	m	struct:_FileItem
+child	json.h	/^		struct json_value *child;	\/*!< The pointer pointing to the first child node in the document tree *\/$/;"	m	struct:json_value	typeref:struct:json_value::json_value
+child_end	json.h	/^		struct json_value *child_end;	\/*!< The pointer pointing to the last child node in the document tree *\/$/;"	m	struct:json_value	typeref:struct:json_value::json_value
+close_array	json.h	/^		int (*close_array) (void);$/;"	m	struct:json_saxy_functions
+close_object	json.h	/^		int (*close_object) (void);$/;"	m	struct:json_saxy_functions
+ctime	fb_common.c	/^		unsigned long ctime;$/;"	m	struct:_FileItem	file:
+ctime	fb_common.h	/^		unsigned long ctime;$/;"	m	struct:_FileItem
+cursor	json.h	/^		json_t *cursor;	\/*!< pointers to nodes belonging to the document tree which aid the document parsing *\/$/;"	m	struct:json_parsing_info
+fullpath	fb_common.c	/^		char fullpath[256];$/;"	m	struct:_FileItem	file:
+fullpath	fb_common.h	/^		char fullpath[256];$/;"	m	struct:_FileItem
+height	fb_common.c	/^		int height;$/;"	m	struct:Icon	file:
+height	fb_common.c	/^		int height;$/;"	m	struct:Thumbnail	file:
+height	fb_common.h	/^		int height;$/;"	m	struct:Icon
+height	fb_common.h	/^		int height;$/;"	m	struct:Thumbnail
+icons	fb_common.c	/^		struct Icon icons[4];$/;"	m	struct:_FileItem	typeref:struct:_FileItem::Icon	file:
+icons	fb_common.h	/^		struct Icon icons[4];$/;"	m	struct:_FileItem	typeref:struct:_FileItem::Icon
+intern_json_free_value	json.c	/^intern_json_free_value (json_t ** value)$/;"	f	file:
+json_error	json.h	/^	enum json_error$/;"	g
+json_escape	json.c	/^json_escape (const char *text)$/;"	f
+json_find_first_label	json.c	/^json_find_first_label (const json_t * object, const char *text_label)$/;"	f
+json_format_string	json.c	/^json_format_string (const char *text)$/;"	f
+json_free_value	json.c	/^json_free_value (json_t ** value)$/;"	f
+json_insert_child	json.c	/^json_insert_child (json_t * parent, json_t * child)$/;"	f
+json_insert_pair_into_object	json.c	/^json_insert_pair_into_object (json_t * parent, const char *text_label, json_t * value)$/;"	f
+json_jpi_init	json.c	/^json_jpi_init (struct json_parsing_info *jpi)$/;"	f
+json_new_array	json.c	/^json_new_array (void)$/;"	f
+json_new_false	json.c	/^json_new_false (void)$/;"	f
+json_new_null	json.c	/^json_new_null (void)$/;"	f
+json_new_number	json.c	/^json_new_number (const char *text)$/;"	f
+json_new_object	json.c	/^json_new_object (void)$/;"	f
+json_new_string	json.c	/^json_new_string (const char *text)$/;"	f
+json_new_true	json.c	/^json_new_true (void)$/;"	f
+json_new_value	json.c	/^json_new_value (const enum json_value_type type)$/;"	f
+json_parse_document	json.c	/^json_parse_document (json_t ** root, const char *text)$/;"	f
+json_parse_fragment	json.c	/^json_parse_fragment (struct json_parsing_info *info, const char *buffer)$/;"	f
+json_parsing_info	json.h	/^	struct json_parsing_info$/;"	s
+json_saxy_functions	json.h	/^	struct json_saxy_functions$/;"	s
+json_saxy_parse	json.c	/^json_saxy_parse (struct json_saxy_parser_status *jsps, struct json_saxy_functions *jsf, char c)$/;"	f
+json_saxy_parser_status	json.h	/^	struct json_saxy_parser_status$/;"	s
+json_stream_output	json.c	/^json_stream_output (FILE * file, json_t * root)$/;"	f
+json_stream_parse	json.c	/^json_stream_parse (FILE * file, json_t ** document)$/;"	f
+json_strip_white_spaces	json.c	/^json_strip_white_spaces (char *text)$/;"	f
+json_t	json.h	/^	} json_t;$/;"	t	typeref:struct:json_value
+json_tree_to_string	json.c	/^json_tree_to_string (json_t * root, char **text)$/;"	f
+json_unescape	json.c	/^json_unescape (const char *text)$/;"	f
+json_value	json.h	/^	typedef struct json_value$/;"	s
+json_value_type	json.h	/^	enum json_value_type$/;"	g
+label_value_separator	json.h	/^		int (*label_value_separator) (void);$/;"	m	struct:json_saxy_functions
+length	json.h	/^		size_t length;	\/*<! put in place to avoid strlen() calls *\/$/;"	m	struct:rui_cstring
+lex_state	json.h	/^		unsigned int lex_state;$/;"	m	struct:json_parsing_info
+lex_text	json.h	/^		rcstring *lex_text;$/;"	m	struct:json_parsing_info
+lexer	json.c	/^lexer (const char *buffer, const char **p, unsigned int *state, rcstring ** text, size_t *line)$/;"	f
+line	json.h	/^		size_t line;	\/\/ current document line$/;"	m	struct:json_parsing_info
+max	json.h	/^		size_t max;	\/*<! usable memory allocated to text minus the space for the nul character *\/$/;"	m	struct:rui_cstring
+mtime	fb_common.c	/^		unsigned long mtime;$/;"	m	struct:_FileItem	file:
+mtime	fb_common.h	/^		unsigned long mtime;$/;"	m	struct:_FileItem
+name	fb_common.c	/^		char name[64];$/;"	m	struct:_FileItem	file:
+name	fb_common.h	/^		char name[64];$/;"	m	struct:_FileItem
+new_false	json.h	/^		int (*new_false) (void);$/;"	m	struct:json_saxy_functions
+new_null	json.h	/^		int (*new_null) (void);$/;"	m	struct:json_saxy_functions
+new_number	json.h	/^		int (*new_number) (char *text);$/;"	m	struct:json_saxy_functions
+new_string	json.h	/^		int (*new_string) (char *text);$/;"	m	struct:json_saxy_functions
+new_true	json.h	/^		int (*new_true) (void);$/;"	m	struct:json_saxy_functions
+next	fb_common.c	/^		struct file_item *next;$/;"	m	struct:_FileItem	typeref:struct:_FileItem::file_item	file:
+next	fb_common.h	/^		struct file_item *next;$/;"	m	struct:_FileItem	typeref:struct:_FileItem::file_item
+next	json.h	/^		struct json_value *next;	\/*!< The pointer pointing to the next element in the FIFO sibling list *\/$/;"	m	struct:json_value	typeref:struct:json_value::json_value
+open_array	json.h	/^		int (*open_array) (void);$/;"	m	struct:json_saxy_functions
+open_object	json.h	/^		int (*open_object) (void);$/;"	m	struct:json_saxy_functions
+p	json.h	/^		const char *p;$/;"	m	struct:json_parsing_info
+parent	json.h	/^		struct json_value *parent;	\/*!< The pointer pointing to the parent node in the document tree *\/$/;"	m	struct:json_value	typeref:struct:json_value::json_value
+permission	fb_common.c	/^		unsigned char permission;$/;"	m	struct:_FileItem	file:
+permission	fb_common.h	/^		unsigned char permission;$/;"	m	struct:_FileItem
+previous	json.h	/^		struct json_value *previous;	\/*!< The pointer pointing to the previous element in the FIFO sibling list *\/$/;"	m	struct:json_value	typeref:struct:json_value::json_value
+rcs_catc	json.c	/^rcs_catc (rcstring * pre, const char c)$/;"	f
+rcs_catcs	json.c	/^rcs_catcs (rcstring * pre, const char *pos, const size_t length)$/;"	f
+rcs_create	json.c	/^rcs_create (size_t length)$/;"	f
+rcs_free	json.c	/^rcs_free (rcstring ** rcs)$/;"	f
+rcs_length	json.c	/^rcs_length (rcstring * rcs)$/;"	f
+rcs_resize	json.c	/^rcs_resize (rcstring * rcs, size_t length)$/;"	f
+rcs_unwrap	json.c	/^rcs_unwrap (rcstring * rcs)$/;"	f
+rcstring	json.h	/^	typedef struct rui_cstring rcstring;$/;"	t	typeref:struct:rui_cstring
+readdir	fb_file.c	/^int readdir(char *fullpath, FileItem **items)$/;"	f
+rstring_code	json.c	/^typedef enum rui_string_error_codes rstring_code;$/;"	t	typeref:enum:rui_string_error_codes	file:
+rui_cstring	json.h	/^	struct rui_cstring$/;"	s
+rui_string_error_codes	json.c	/^enum rui_string_error_codes$/;"	g	file:
+sibling_separator	json.h	/^		int (*sibling_separator) (void);$/;"	m	struct:json_saxy_functions
+size	fb_common.c	/^		unsigned int size;$/;"	m	struct:_FileItem	file:
+size	fb_common.h	/^		unsigned int size;$/;"	m	struct:_FileItem
+sourcetype	fb_common.c	/^		char sourcetype[6];$/;"	m	struct:_FileItem	file:
+sourcetype	fb_common.h	/^		char sourcetype[6];$/;"	m	struct:_FileItem
+state	json.h	/^		unsigned int state;	\/*!< current parser state *\/$/;"	m	struct:json_saxy_parser_status
+state	json.h	/^		unsigned int state;	\/*!< the state where the parsing was left on the last parser run *\/$/;"	m	struct:json_parsing_info
+string_length_limit_reached	json.h	/^		int string_length_limit_reached;	\/*!< flag informing if the string limit length defined by JSON_MAX_STRING_LENGTH was reached *\/$/;"	m	struct:json_parsing_info
+string_length_limit_reached	json.h	/^		int string_length_limit_reached;	\/*!< flag informing if the string limit length defined by JSON_MAX_STRING_LENGTH was reached *\/$/;"	m	struct:json_saxy_parser_status
+temp	json.h	/^		rcstring *temp;	\/*!< temporary string which will be used to build up parsed strings between parser runs. *\/$/;"	m	struct:json_saxy_parser_status
+text	json.h	/^		char *text;	\/*!< The text stored by the node. It stores UTF-8 strings and is used exclusively by the JSON_STRING and JSON_NUMBER node types *\/$/;"	m	struct:json_value
+text	json.h	/^		char *text;	\/*<! char c-string *\/$/;"	m	struct:rui_cstring
+thumbnails	fb_common.c	/^		struct Thumbnail thumbnails[4];$/;"	m	struct:_FileItem	typeref:struct:_FileItem::Thumbnail	file:
+thumbnails	fb_common.h	/^		struct Thumbnail thumbnails[4];$/;"	m	struct:_FileItem	typeref:struct:_FileItem::Thumbnail
+type	json.h	/^		enum json_value_type type;	\/*!< the type of node *\/$/;"	m	struct:json_value	typeref:enum:json_value::json_value_type
+uri	fb_common.c	/^		char uri[256];$/;"	m	struct:Icon	file:
+uri	fb_common.c	/^		char uri[256];$/;"	m	struct:Thumbnail	file:
+uri	fb_common.h	/^		char uri[256];$/;"	m	struct:Icon
+uri	fb_common.h	/^		char uri[256];$/;"	m	struct:Thumbnail
+width	fb_common.c	/^		int width;$/;"	m	struct:Icon	file:
+width	fb_common.c	/^		int width;$/;"	m	struct:Thumbnail	file:
+width	fb_common.h	/^		int width;$/;"	m	struct:Icon
+width	fb_common.h	/^		int width;$/;"	m	struct:Thumbnail
