@@ -1,8 +1,8 @@
 #ifndef _FB_FILE_H_
 #define _FB_FILE_H_
 
-#include "fb_common.h"
+#include "fb_utils.h"
 
-int fb_file_readdir(const char *fullpath, FileItem **items);
+int fb_file_readdir(ReaddirParams *params);
 
 #endif

@@ -11,32 +11,28 @@
 
 
 #include "fb_file.h"
-#include "fb_common.h"
+#include "fb_utils.h"
 
 #define LOCAL_LOG_TAG "filebrowser_file"
 #include "android_log.h"
 
-struct kfile{
-    "file|dms|smb",
-    readdir,
-}
+extern int g_reset;
 
-register,
-
-int fb_file_readdir(const char *fullpath, /*FileItem **items*/, struct param)
+int fb_file_readdir(ReaddirParams *params)
 {
-	assert (items != NULL);
+	assert (params != NULL);
 
 	int errno_tmp;
     enum ReadErr rderr = NO_ERR;
-    FileItem **item_move = items;
+    FileItem *items = NULL;
+    FileItem **item_move = &items;
 
-	if (fullpath == NULL){
+	if (params->path == NULL){
 		LOGW("fullpath should not be null\n");
 		return NOT_EXIST;
 	}
 
-	DIR *curdir = opendir(fullpath);
+	DIR *curdir = opendir(params->path);
 	if (curdir == NULL){
 		errno_tmp = errno;
 		LOGW("opendir error\n");
@@ -46,6 +42,7 @@ int fb_file_readdir(const char *fullpath, /*FileItem **items*/, struct param)
 	}
 
 	struct dirent *dir_item;
+    int items_count = 0;
 	errno_tmp = errno;
 	while((dir_item = readdir(curdir)) != NULL)
 	{
@@ -54,11 +51,21 @@ int fb_file_readdir(const char *fullpath, /*FileItem **items*/, struct param)
             continue;
 		*item_move = malloc (sizeof(FileItem));
 		memset (*item_move, 0, sizeof(FileItem));
-		strncpy ((*item_move)->sourcetype, "file");
-		strncpy ((*item_move)->fullpath, fullpath);
-		strncat ((*item_move)->fullpath, "/");
-		strncat ((*item_move)->fullpath, dir_item->d_name);
-		strncpy ((*item_move)->name, dir_item->d_name);
+        {
+            int len = strlen(params->path)+strlen(dir_item->d_name)+1;
+            if (len > MAX_LENGTH_URL)
+            {
+                LOGW("path is too long");
+                free (*item_move);
+                *item_move = NULL;
+                continue;
+            }
+            strcpy ((*item_move)->sourcetype, "file");
+		    strcpy ((*item_move)->fullpath, params->path);
+		    strcat ((*item_move)->fullpath, "/");
+		    strcat ((*item_move)->fullpath, dir_item->d_name);
+	   	    strncpy ((*item_move)->name, dir_item->d_name, MAX_LENGTH_NAME);
+		}
 
 		struct stat buf;
 		if (stat ((*item_move)->fullpath, &buf) != 0){
@@ -100,14 +107,34 @@ int fb_file_readdir(const char *fullpath, /*FileItem **items*/, struct param)
             (*item_move)->permission |= WRITE_OK;
 
 		item_move = &(*item_move)->next;
+        if (params->maxcount != 0 && ++items_count>= params->maxcount){
+            LOGE("Callback for count to the max");
+            char *json_info;
+            json_info = fb_convert(items, items_count, 0, 0);
+            params->cb(json_info, params->cb_arg);
+            free(json_info);
+            fb_free_items(items);
+            items = NULL;
+            item_move = &items;
+            items_count = 0;
+        }
         errno_tmp = errno;
 	}
-	if (errno_tmp != errno){
+    if (errno_tmp != errno){
 		LOGW("readdir error!\n");
 	}
 
     if (closedir(curdir) != 0){
         LOGW("closedir error before ret!\n");
+    }
+
+    {
+       LOGE("Callback for the end");
+       char *json_info;
+       json_info = fb_convert(items, items_count, 0, 1);
+       params->cb(json_info, params->cb_arg);
+       free(json_info);
+       fb_free_items(items);
     }
 
     return NO_ERR;
