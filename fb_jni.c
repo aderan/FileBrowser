@@ -44,25 +44,36 @@ static int _readdir_callback(const char *json_info,void *arg)
     LOGE("_readdir_callback:%s %d",json_info,*(int*)arg);
 }
 
+/*----------------------------------------------------------------------
+|    JNI_OnLoad
++---------------------------------------------------------------------*/
+JNIEXPORT jint JNICALL
+JNI_OnLoad(JavaVM* vm, void* reserved)
+{
+    LOGE("Jni_OnLoad Called");
+    return JNI_VERSION_1_4;
+}
+
 /*
- * Class:     com_targetv_ott_FileBrowserService
+ * Class:     com_targetv_fs_FileBrowserService
  * Method:    _init
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1init
+JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1init
   (JNIEnv *env, jobject obj)
 {
-    jclass lcls = (*env)->FindClass(env,"com/targetv/ott/FileBrowserService");
+    LOGE("FBService Init Called");
+    jclass lcls = (*env)->FindClass(env,"com/targetv/fs/FileBrowserService");
     jcls = (*env)->NewGlobalRef(env, lcls);
     jobj = (*env)->NewGlobalRef(env, obj);
 }
 
 /*
- * Class:     com_targetv_ott_FileBrowserService
+ * Class:     com_targetv_fs_FileBrowserService
  * Method:    _uninit
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1uninit
+JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1uninit
   (JNIEnv *env, jobject obj)
 {
     //TOKNOW: this env is not the same with that in init;
@@ -72,11 +83,11 @@ JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1uninit
 
 
 /*
- * Class:     com_targetv_ott_FileBrowserService
+ * Class:     com_targetv_fs_FileBrowserService
  * Method:    _readdir
  * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
  */
-JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1readdir
+JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1readdir
   (JNIEnv *env, jobject obj, jstring path, jstring username, jstring passwd, jint maxcount, jint callid)
 {
     ReaddirParams params;
@@ -107,11 +118,11 @@ JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1readdir
 }
 
 /*
- * Class:     com_targetv_ott_FileBrowserService
+ * Class:     com_targetv_fs_FileBrowserService
  * Method:    _findService
  * Signature: (Ljava/lang/String;I)V
  */
-JNIEXPORT void JNICALL Java_com_targetv_ott_FileBrowserService__1findService
+JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1findService
   (JNIEnv *env, jobject obj, jstring type, jint callid){
 
 }

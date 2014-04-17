@@ -1,6 +1,11 @@
 #ifndef _FB_UTILS_H_
 #define _FB_UTILS_H_
 
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+
 #include <stdint.h>
 #include <sys/types.h>
 
@@ -67,6 +72,10 @@
 
 	char *fb_convert(FileItem *items, int num_items, int err, int over);
     void fb_free_items(FileItem *items);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

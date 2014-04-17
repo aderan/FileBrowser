@@ -3,6 +3,13 @@
 
 #include "fb_utils.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int fb_file_readdir(ReaddirParams *params);
 
+#ifdef __cplusplus
+}
+#endif
 #endif
