@@ -32,6 +32,12 @@ int fb_file_readdir(ReaddirParams *params)
 		return NOT_EXIST;
 	}
 
+    {
+        int len = strlen("file://");
+        memmove(params->path, &params->path[len], MAX_LENGTH_URL-len);
+        LOGE("path is %s\n", params->path);
+    }
+
 	DIR *curdir = opendir(params->path);
 	if (curdir == NULL){
 		errno_tmp = errno;
@@ -44,7 +50,7 @@ int fb_file_readdir(ReaddirParams *params)
 	struct dirent *dir_item;
     int items_count = 0;
 	errno_tmp = errno;
-	while((dir_item = readdir(curdir)) != NULL)
+	while((dir_item = readdir(curdir)) != NULL && !g_reset)
 	{
         if (strcmp(dir_item->d_name,".") == 0
             || strcmp(dir_item->d_name,"..") == 0 )
@@ -74,6 +80,7 @@ int fb_file_readdir(ReaddirParams *params)
             *item_move = NULL;
             continue;
 		}
+        LOGE("time is %d , %d , %d\n",buf.st_ctime, buf.st_atime, buf.st_mtime);
 		(*item_move)->ctime = buf.st_ctime;
 		(*item_move)->atime = buf.st_atime;
 		(*item_move)->mtime = buf.st_mtime;
@@ -106,6 +113,13 @@ int fb_file_readdir(ReaddirParams *params)
         if (access ((*item_move)->fullpath, W_OK) == 0)
             (*item_move)->permission |= WRITE_OK;
 
+        {
+            int len = strlen("file://");
+            memmove(&(*item_move)->fullpath[len], (*item_move)->fullpath, MAX_LENGTH_URL-len);
+            memcpy((*item_move)->fullpath, "file://",len);
+            LOGE("path2 is %s\n", (*item_move)->fullpath);
+        }
+
 		item_move = &(*item_move)->next;
         if (params->maxcount != 0 && ++items_count>= params->maxcount){
             LOGE("Callback for count to the max");
@@ -118,6 +132,7 @@ int fb_file_readdir(ReaddirParams *params)
             item_move = &items;
             items_count = 0;
         }
+
         errno_tmp = errno;
 	}
     if (errno_tmp != errno){
@@ -130,8 +145,10 @@ int fb_file_readdir(ReaddirParams *params)
 
     {
        LOGE("Callback for the end");
+
        char *json_info;
        json_info = fb_convert(items, items_count, 0, 1);
+       LOGE("cb_arg 3 is %d %p\n",*(int*)params->cb_arg,params->cb);
        params->cb(json_info, params->cb_arg);
        free(json_info);
        fb_free_items(items);

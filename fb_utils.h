@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 #include <sys/types.h>
+#include <pthread.h>
 
 	enum ReadErr{
 	    NO_ERR,
@@ -26,6 +27,8 @@
     #define MAX_LENGTH_NAME 256
     #define MAX_NUM_THUMBNAILS 4
     #define MAX_NUM_URIS 4
+
+    #define MAX_THREAD_NUM 10
 
 	struct Thumbnail {
 		int width;
@@ -62,7 +65,20 @@
         char passwd[MAX_LENGTH_PASSWD];
         FuncUpdir cb;
         void *cb_arg;
-    }ReaddirParams;
+    }ReaddirParams;
+
+    enum ThreadType{
+        TYPE_READDIR,
+        TYPE_FINDSERVER,
+    };
+
+    typedef struct _ThreadHandle{
+        enum ThreadType type;
+        void * content;
+        pthread_t pid;
+        int finished;
+        int joined;
+    }ThreadHandle;
 
     typedef int (*FuncReaddir)(ReaddirParams *params);
     typedef struct _KFile{

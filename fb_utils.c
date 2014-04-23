@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdio.h>
 
+#define __STDC_FORMAT_MACROS
+#include <inttypes.h>
+
 #include "fb_utils.h"
 #include "json.h"
 
@@ -36,7 +39,7 @@ char *fb_convert(FileItem *items, int num_items, int err, int over){
         json_insert_child(j_item, label);
 
         label = json_new_string("size");
-        snprintf(numtos, sizeof numtos, "%lld",item_move->size);
+        snprintf(numtos, sizeof numtos, "%"PRIu64,item_move->size);
         value = json_new_string(numtos);
         json_insert_child(label, value);
         json_insert_child(j_item, label);
@@ -52,19 +55,19 @@ char *fb_convert(FileItem *items, int num_items, int err, int over){
         json_insert_child(j_item, label);
 
         label = json_new_string("ctime");
-        snprintf(numtos, sizeof numtos, "%lld",item_move->ctime);
+        snprintf(numtos, sizeof numtos, "%zu",item_move->ctime);
         value = json_new_string(numtos);
         json_insert_child(label, value);
         json_insert_child(j_item, label);
 
         label = json_new_string("atime");
-        snprintf(numtos, sizeof numtos, "%lld",item_move->atime);
+        snprintf(numtos, sizeof numtos, "%zu",item_move->atime);
         value = json_new_string(numtos);
         json_insert_child(label, value);
         json_insert_child(j_item, label);
 
         label = json_new_string("mtime");
-        snprintf(numtos, sizeof numtos, "%lld",item_move->mtime);
+        snprintf(numtos, sizeof numtos, "%zu",item_move->mtime);
         value = json_new_string(numtos);
         json_insert_child(label, value);
         json_insert_child(j_item, label);
