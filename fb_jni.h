@@ -9,19 +9,11 @@ extern "C" {
 #endif
 /*
  * Class:     com_targetv_fs_FileBrowserService
- * Method:    _readdir
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+ * Method:    _asyncNativeCall
+ * Signature: (Landroid/os/Bundle;)V
  */
-JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1readdir
-  (JNIEnv *, jobject, jstring, jstring, jstring, jint, jint);
-
-/*
- * Class:     com_targetv_fs_FileBrowserService
- * Method:    _findService
- * Signature: (Ljava/lang/String;I)V
- */
-JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1findService
-  (JNIEnv *, jobject, jstring, jint);
+JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1asyncNativeCall
+  (JNIEnv *, jobject, jobject);
 
 /*
  * Class:     com_targetv_fs_FileBrowserService
@@ -43,4 +35,3 @@ JNIEXPORT void JNICALL Java_com_targetv_fs_FileBrowserService__1uninit
 }
 #endif
 #endif
-

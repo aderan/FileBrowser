@@ -30,6 +30,8 @@
 
     #define MAX_THREAD_NUM 10
 
+
+
 	struct Thumbnail {
 		int width;
 		int height;
@@ -70,6 +72,8 @@
     enum ThreadType{
         TYPE_READDIR,
         TYPE_FINDSERVER,
+        TYPE_RESET,
+        TYPE_ABORT,
     };
 
     typedef struct _ThreadHandle{

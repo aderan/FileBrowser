@@ -143,7 +143,7 @@ int fb_file_readdir(ReaddirParams *params)
         LOGW("closedir error before ret!\n");
     }
 
-    {
+    if (!g_reset){
        LOGE("Callback for the end");
 
        char *json_info;
