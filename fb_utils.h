@@ -69,6 +69,15 @@
         void *cb_arg;
     }ReaddirParams;
 
+    typedef struct _ServiceParams{
+        char path[MAX_LENGTH_URL];
+        int maxcount;
+        char username[MAX_LENGTH_NAME];
+        char passwd[MAX_LENGTH_PASSWD];
+        FuncUpdir cb;
+        void *cb_arg;
+    }ServiceParams;
+
     enum ThreadType{
         TYPE_READDIR,
         TYPE_FINDSERVER,

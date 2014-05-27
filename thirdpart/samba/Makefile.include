@@ -1,0 +1,48 @@
+TOOLCHAIN=/home/aderan/toolchain/android-14
+NDKROOT=/opt/android-ndk-r9d
+SDKROOT=/opt/android-sdk-linux
+PLATFORM=arm-linux-androideabi-android-14
+HOST=arm-linux-androideabi
+CPU=armeabi-v7a
+NATIVEPLATFORM=x86_64-linux-gnu-native
+SDK_PLATFORM=android-14
+RETRIEVE_TOOL=/usr/bin/curl
+ARCHIVE_TOOL=/bin/tar
+PREFIX=$(CURDIR)/config/
+#PREFIX=/home/aderan/xbmc-deps/arm-linux-androideabi-android-14
+#NATIVEPREFIX=/home/aderan/xbmc-deps/x86_64-linux-gnu-native
+#ARCHIVE_TOOL_NATIVE=$(NATIVEPREFIX)/bin/tar
+OS=android
+CROSS_COMPILING=yes
+ARCH_DEFINES=-DTARGET_POSIX -DTARGET_LINUX -D_LINUX -DTARGET_ANDROID
+
+HAS_ZLIB=1
+NEED_LIBICONV=1
+LINK_ICONV=-liconv
+ENABLE_GPLV3=0
+HAS_LIBCRYSTAX=0
+
+BASE_URL=http://mirrors.xbmc.org/build-deps/sources
+RETRIEVE_TOOL_FLAGS=-Ls --create-dirs -f -O
+ARCHIVE_TOOL_FLAGS=--strip-components=1 -xf
+#CONFIG_SUB=/home/aderan/xbmc-deps/x86_64-linux-gnu-native/share/automake-1.11/config.sub
+#CONFIG_GUESS=/home/aderan/xbmc-deps/x86_64-linux-gnu-native/share/automake-1.11/config.guess
+
+#RPL=/home/aderan/xbmc-deps/x86_64-linux-gnu-native/bin/python /home/aderan/xbmc-deps/x86_64-linux-gnu-native/bin/rpl
+
+LD=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-ld
+CC=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-gcc
+CXX=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-g++
+CPP=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-gcc -E
+AR=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-ar
+RANLIB=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-ranlib
+AS=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-as
+NM=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-nm
+STRIP=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-strip
+READELF=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-readelf
+OBJDUMP=/home/aderan/toolchain/android-14/bin/arm-linux-androideabi-objdump
+
+CFLAGS=-DANDROID -Os -fexceptions -march=armv7-a -mtune=cortex-a9 -mfloat-abi=softfp -mfpu=neon
+LDFLAGS=-L
+CXXFLAGS=-DANDROID -Os -fexceptions -march=armv7-a -mtune=cortex-a9 -mfloat-abi=softfp -mfpu=neon -frtti  
+CPPFLAGS=-DANDROID -Os -fexceptions -march=armv7-a -mtune=cortex-a9 -mfloat-abi=softfp -mfpu=neon

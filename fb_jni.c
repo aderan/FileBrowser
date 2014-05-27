@@ -4,6 +4,7 @@
 
 #include "fb_jni.h"
 #include "fb_file.h"
+#include "fb_smb.h"
 #include "fb_utils.h"
 
 #define LOCAL_LOG_TAG "fb_jni"
@@ -11,6 +12,7 @@
 
 static const KFile kfiles[] = {
     {"file", fb_file_readdir},
+    {"smb", fb_smb_readdir},
 
     {NULL, NULL},
 };

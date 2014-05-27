@@ -10,10 +10,10 @@
 #define LOGW(...) __android_log_print(ANDROID_LOG_WARN   , LOCAL_LOG_TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR  , LOCAL_LOG_TAG, __VA_ARGS__)
 #else
-#define LOGV(...) 
-#define LOGD(...) 
-#define LOGI(...) 
-#define LOGW(...) 
+#define LOGV(...)
+#define LOGD(...)
+#define LOGI(...)
+#define LOGW(...)
 #define LOGE(...)
-#endif 
-#endif 
+#endif
+#endif
